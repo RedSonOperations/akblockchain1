@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blockchain</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">My Blockchain</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Chain</h2>
+                <pre id="chainOutput"></pre>
+                <a href="http://127.0.0.1:5000/chain" class="btn btn-primary">Get Chain</a>
+            </div>
+            <div class="col-md-6">
+                <h2>Mine Block</h2>
+                <a href="http://127.0.0.1:5000/mine" class="btn btn-success">Mine Block</a>
+                <pre id="mineOutput"></pre>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Validate Chain</h2>
+                <a href="http://127.0.0.1:5000/validate" class="btn btn-warning">Validate Chain</a>
+                <pre id="validateOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Load the initial state of the chain when the page loads
+        $(document).ready(function() {
+            getChain();
+        });
+    </script>
+</body>
+</html>

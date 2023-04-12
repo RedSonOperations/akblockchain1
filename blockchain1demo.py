@@ -2,7 +2,7 @@
 import hashlib
 import json
 import time
-from flask import Flask, jsonify, redirect, request
+from flask import Flask, jsonify, redirect, request, render_template
 
 # Define the Block class
 class Block:
@@ -82,10 +82,10 @@ def mine_block():
     }
     return jsonify(response), 200
 
-@app.route('/')
-def root():
+#@app.route('/')
+#def root():
     # Redirect to /chain instead of /
-    return redirect('/chain', code=302)
+ #   return redirect('/chain', code=302)
 
 @app.route('/chain', methods=['GET'])
 def get_chain():
@@ -114,5 +114,10 @@ def validate_chain():
         status = 400
     return jsonify(response), status
 
+@app.route('/', methods=['GET'])
+def home():
+    # Render the HTML file
+    return render_template('index.html')
+
 if __name__ == '__main__':
-    app.run(port='5000')
+    app.run(debug=True)
